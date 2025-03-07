@@ -20,6 +20,7 @@ export class ExamFormComponent implements OnInit, OnDestroy {
   errorMessage = '';
   showForm = false;
   private subscription: Subscription | null = null;
+  private readonly NAVIGATION_DELAY = 1500;
   
   statusOptions: ExamStatus[] = ['A organiser', 'Recherche de place', 'Confirmé', 'Annulé'];
 
@@ -60,7 +61,7 @@ export class ExamFormComponent implements OnInit, OnDestroy {
     
     // Ensure we're strictly checking for 00 or 30 minutes
     if (minutes !== 0 && minutes !== 30) {
-      return { invalidTimeStep: { value: control.value } };
+      return { invalidTimeStep: { message: 'Les minutes doivent être soit 00 soit 30', value: control.value } };
     }
     
     return null;
@@ -109,7 +110,7 @@ export class ExamFormComponent implements OnInit, OnDestroy {
         this.initForm();
         setTimeout(() => {
           this.router.navigate(['/exams']);
-        }, 1500);
+        }, this.NAVIGATION_DELAY);
       },
       error: (error) => {
         this.errorMessage = error?.message || 'Erreur lors de l\'ajout de l\'examen.';

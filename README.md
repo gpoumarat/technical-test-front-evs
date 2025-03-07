@@ -48,7 +48,7 @@ Il est suggéré de :
 - Le [docker-compose.yml](docker-compose.yml), qui nécessitera les Dockerfile
 - Le [server.js](server.js), qui contient un serveur mock.
 
-## Livrable attendus
+## Livrables attendus
 
 L'ensemble des fichiers permettant le lancement de l'application via la commande suivante :
 

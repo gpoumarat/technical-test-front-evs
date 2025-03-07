@@ -9,7 +9,7 @@ app.use(cors());
 let items = [
   {
     student: {
-      first_name: "Isabella ",
+      first_name: "Isabella",
       last_name: "Smith"
     },
     meeting_point: "Paris",
