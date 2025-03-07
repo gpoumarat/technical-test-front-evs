@@ -1,0 +1,53 @@
+{
+  "name": "exam-frontend",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --poll=2000 --disable-host-check",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test --watch=false --browsers=ChromeHeadless",
+    "test:watch": "ng test",
+    "test:coverage": "ng test --code-coverage --watch=false --browsers=ChromeHeadless",
+    "pretest:e2e": "node cypress/support/test-setup.js",
+    "e2e": "cypress run",
+    "e2e:open": "cypress open",
+    "test:integration": "ng test --include=src/app/integration/**/*.spec.ts --watch=false --browsers=ChromeHeadless",
+    "test:all": "concurrently \"npm run start\" \"npm run test && npm run test:integration && npm run e2e\""
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^16.2.0",
+    "@angular/common": "^16.2.0",
+    "@angular/compiler": "^16.2.0",
+    "@angular/core": "^16.2.0",
+    "@angular/forms": "^16.2.0",
+    "@angular/platform-browser": "^16.2.0",
+    "@angular/platform-browser-dynamic": "^16.2.0",
+    "@angular/router": "^16.2.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.13.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^16.2.0",
+    "@angular/cli": "~16.2.0",
+    "@angular/compiler-cli": "^16.2.0",
+    "@tailwindcss/forms": "^0.5.10",
+    "@types/jasmine": "~4.3.0",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^8.2.2",
+    "cypress": "12.17.4",
+    "@cypress/schematic": "2.5.0",
+    "jasmine-core": "~4.6.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.1.3",
+    "wait-on": "^7.2.0"
+  }
+}
